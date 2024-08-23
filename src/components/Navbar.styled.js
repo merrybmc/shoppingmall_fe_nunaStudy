@@ -2,10 +2,12 @@ import styled from 'styled-components';
 
 export const LoginButton = styled.div`
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  width: fit-content;
+
+  margin-left: auto;
   gap: 8px;
-  padding-right: 8px;
+  padding-right: 16px;
 
   cursor: pointer;
 `;
@@ -19,6 +21,8 @@ export const LogoImage = styled.img`
   width: 150px;
   height: 150px;
   border-radius: 50%;
+
+  cursor: pointer;
 `;
 
 export const MenuList = styled.ul`

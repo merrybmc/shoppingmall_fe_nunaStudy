@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../components/ProductCard';
+import * as S from './ProductAll.styled';
+import { useSearchParams } from 'react-router-dom';
 
-export default function ProductAll() {
+export default function ProductAll({ authenticate }) {
   const [productList, setProductList] = useState([]);
+  const [query] = useSearchParams();
 
   const getProducts = async () => {
-    let url = 'http://localhost:5000/products';
+    let serachQuery = query.get('q') || '';
+    let url = `http://localhost:5000/products?q=${serachQuery}`;
     let response = await fetch(url);
     let data = await response.json();
     setProductList(data);
@@ -13,10 +17,13 @@ export default function ProductAll() {
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [query]);
+
   return (
-    <div>
-      <ProductCard productList={productList} />
-    </div>
+    <S.ProductAllContainer>
+      {productList.map((menu) => (
+        <ProductCard menu={menu} authenticate={authenticate} />
+      ))}
+    </S.ProductAllContainer>
   );
 }
