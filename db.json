@@ -2,6 +2,7 @@
   "products": [
     {
       "id": 0,
+      "category": "여성",
       "img": "https://noona-hnm.netlify.app/pattern-jacket.jpeg",
       "title": "벨티드 트윌 코트",
       "price": 99900,
@@ -11,6 +12,7 @@
     },
     {
       "id": 1,
+      "category": "남성",
       "img": "https://noona-hnm.netlify.app/ankle-jeans.jpeg",
       "title": "슬림핏 맘 하이웨이스트 앵클 진",
       "price": 29900,

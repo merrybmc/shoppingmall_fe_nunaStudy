@@ -9,7 +9,10 @@ export default function ProductAll({ authenticate }) {
 
   const getProducts = async () => {
     let serachQuery = query.get('q') || '';
-    let url = `https://my-json-server.typicode.com/merrybmc/shoppingmall_fe_nunaStudy/products/?q=${serachQuery}`;
+    let categoryQuery = query.get('category') || '';
+
+    console.log(categoryQuery);
+    let url = `https://my-json-server.typicode.com/merrybmc/shoppingmall_fe_nunaStudy/products/?q=${serachQuery}&category=${categoryQuery}`;
     let response = await fetch(url);
     let data = await response.json();
     setProductList(data);
