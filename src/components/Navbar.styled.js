@@ -3,11 +3,12 @@ import styled from 'styled-components';
 export const LoginButton = styled.div`
   display: flex;
   align-items: center;
-  width: fit-content;
-
+  width: 100px;
+  height: 24px;
   margin-left: auto;
   gap: 8px;
-  padding-right: 16px;
+
+  background-color: beige;
 
   cursor: pointer;
 `;

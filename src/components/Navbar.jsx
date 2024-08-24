@@ -11,17 +11,17 @@ export default function Navbar({ authenticate, setAuthenticate }) {
   const navigate = useNavigate();
 
   const onMovePage = (path) => {
-    if (authenticate && path === 'login') {
+    if (authenticate && path === '/login') {
       setAuthenticate(false);
       navigate('/');
-    } else if (!authenticate && path === 'login') {
+    } else if (!authenticate && path === '/login') {
       navigate('/login');
     } else {
       navigate(path);
     }
   };
   return (
-    <div>
+    <>
       <S.LoginButton onClick={() => onMovePage('/login')}>
         <CiUser />
         <p>{authenticate ? '로그아웃' : '로그인'}</p>
@@ -37,6 +37,6 @@ export default function Navbar({ authenticate, setAuthenticate }) {
         <MenuList menuList={menuList} />
         <SearchInput />
       </S.BottomContainer>
-    </div>
+    </>
   );
 }

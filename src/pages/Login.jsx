@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import LoginInput from '../components/LoginInput';
+import * as S from './Login.styled.js';
 
 export default function Login({ setAuthenticate }) {
   const navigate = useNavigate();
@@ -11,17 +13,11 @@ export default function Login({ setAuthenticate }) {
   };
   return (
     <div>
-      <form onSubmit={(e) => loginUser(e)}>
-        <div>
-          <div>Email</div>
-          <input />
-        </div>
-        <div>
-          <div>Password</div>
-          <input />
-        </div>
-        <button>로그인</button>
-      </form>
+      <S.LoginForm onSubmit={(e) => loginUser(e)}>
+        <LoginInput type={'email'} />
+        <LoginInput type={'password'} />
+        <S.Button>로그인</S.Button>
+      </S.LoginForm>
     </div>
   );
 }

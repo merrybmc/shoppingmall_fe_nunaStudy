@@ -9,10 +9,11 @@ export default function ProductAll({ authenticate }) {
 
   const getProducts = async () => {
     let serachQuery = query.get('q') || '';
-    let url = `http://localhost:5000/products?q=${serachQuery}`;
+    let url = `https://my-json-server.typicode.com/merrybmc/shoppingmall_fe_nunaStudy/products/?q=${serachQuery}`;
     let response = await fetch(url);
     let data = await response.json();
     setProductList(data);
+    console.log(data);
   };
 
   useEffect(() => {
