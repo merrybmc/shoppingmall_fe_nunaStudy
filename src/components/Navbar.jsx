@@ -7,7 +7,7 @@ import { menuList } from '../constants/menuList';
 import logo from '../assets/pikachu_hello.gif';
 import { useNavigate } from 'react-router-dom';
 
-export default function Navbar({ authenticate, setAuthenticate }) {
+export default function Navbar({ authenticate, setAuthenticate, setCategoryFilter }) {
   const navigate = useNavigate();
 
   const onMovePage = (path) => {
@@ -18,6 +18,7 @@ export default function Navbar({ authenticate, setAuthenticate }) {
       navigate('/login');
     } else {
       navigate(path);
+      setCategoryFilter('');
     }
   };
   return (
@@ -34,7 +35,7 @@ export default function Navbar({ authenticate, setAuthenticate }) {
         <S.LogoImage src={logo} />
       </S.LogoBox>
       <S.BottomContainer>
-        <MenuList menuList={menuList} />
+        <MenuList menuList={menuList} setCategoryFilter={setCategoryFilter} />
         <SearchInput />
       </S.BottomContainer>
     </>

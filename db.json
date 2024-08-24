@@ -22,6 +22,7 @@
     },
     {
       "id": 2,
+      "category": "아동",
       "img": "https://noona-hnm.netlify.app/wide-jeans.jpeg",
       "title": "와이드 하이웨이스트 진",
       "price": 39900,
@@ -31,6 +32,7 @@
     },
     {
       "id": 3,
+      "category": "여성",
       "img": "https://noona-hnm.netlify.app/cottom-dress.jpeg",
       "title": "퍼프 슬리브 드레스",
       "price": 39900,
@@ -40,6 +42,7 @@
     },
     {
       "id": 4,
+      "category": "여성",
       "img": "https://noona-hnm.netlify.app/shirt-dress.jpeg",
       "title": "프릴 디테일 드레스",
       "price": 29900,
@@ -49,6 +52,7 @@
     },
     {
       "id": 5,
+      "category": "여성",
       "img": "https://noona-hnm.netlify.app/flare-dress.jpeg",
       "title": "시퀸 플레어 드레스",
       "price": 39900,
@@ -58,6 +62,7 @@
     },
     {
       "id": 6,
+      "category": "아동",
       "img": "https://noona-hnm.netlify.app/single-jacket.jpeg",
       "title": "더블 브레스티드 재킷",
       "price": 39900,
@@ -67,6 +72,7 @@
     },
     {
       "id": 7,
+      "category": "아동",
       "img": "https://noona-hnm.netlify.app/oversize-hoodie.jpeg",
       "title": "오버사이즈 집업 후디",
       "price": 99900,
@@ -76,6 +82,7 @@
     },
     {
       "id": 8,
+      "category": "아동",
       "img": "https://noona-hnm.netlify.app/track-jacket.jpeg",
       "title": "아플리케 트랙 재킷",
       "price": 14900,
@@ -85,6 +92,7 @@
     },
     {
       "id": 9,
+      "category": "아동",
       "img": "https://noona-hnm.netlify.app/design-hoodie.jpeg",
       "title": "프린트 후디",
       "price": 19900,
@@ -94,6 +102,7 @@
     },
     {
       "id": 10,
+      "category": "아동",
       "img": "https://noona-hnm.netlify.app/regular-wide-jeans.jpeg",
       "title": "와이드 트윌 팬츠",
       "price": 19900,
@@ -103,8 +112,9 @@
     },
     {
       "id": 11,
+      "category": "남성",
       "img": "https://noona-hnm.netlify.app/high-jeans.jpeg",
-      "title": "플레어 로라이즈 진",
+      "title": "플레어 ㅓ로라이즈 진",
       "price": 29900,
       "choice": true,
       "new": true,
@@ -112,6 +122,7 @@
     },
     {
       "id": 12,
+      "category": "여성",
       "img": "https://noona-hnm.netlify.app/mash-dress.jpeg",
       "title": "셔링 메쉬 드레스",
       "price": 14900,
@@ -121,6 +132,7 @@
     },
     {
       "id": 13,
+      "category": "아동",
       "img": "https://noona-hnm.netlify.app/sweat-shirt.jpeg",
       "title": "스웨트셔츠",
       "price": 29900,

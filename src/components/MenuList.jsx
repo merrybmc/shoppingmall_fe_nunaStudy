@@ -2,11 +2,11 @@ import React from 'react';
 import * as S from './Navbar.styled';
 import { useNavigate } from 'react-router-dom';
 
-export default function MenuList({ menuList }) {
+export default function MenuList({ menuList, setCategoryFilter }) {
   const navigate = useNavigate();
 
   const onMoveCategory = (menu) => {
-    navigate(`/?q=""&category=${menu}`);
+    setCategoryFilter(menu);
   };
 
   return (
