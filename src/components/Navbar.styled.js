@@ -7,8 +7,7 @@ export const LoginButton = styled.div`
   height: 24px;
   margin-left: auto;
   gap: 8px;
-
-  background-color: beige;
+  padding-top: 20px;
 
   cursor: pointer;
 `;
