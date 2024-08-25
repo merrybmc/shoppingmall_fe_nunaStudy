@@ -3,7 +3,7 @@ import * as S from './Navbar.styled';
 import { CiSearch } from 'react-icons/ci';
 import { useNavigate } from 'react-router-dom';
 
-export default function SearchInput() {
+export default function SearchInput({ onCloseSlideBar }) {
   const navigate = useNavigate();
 
   const search = (e) => {
@@ -11,6 +11,8 @@ export default function SearchInput() {
       let keyword = e.target.value;
 
       navigate(`/?q=${keyword}`);
+
+      onCloseSlideBar && onCloseSlideBar();
     }
   };
 

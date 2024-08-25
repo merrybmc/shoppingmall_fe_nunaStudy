@@ -1,12 +1,11 @@
 import React from 'react';
-import * as S from './Navbar.styled';
-import { useNavigate } from 'react-router-dom';
+import * as S from './MenuList.styled';
+import { menuList } from '../constants/menuList';
 
-export default function MenuList({ menuList, setCategoryFilter }) {
-  const navigate = useNavigate();
-
+export default function MenuList({ setCategoryFilter, onCloseSlideBar }) {
   const onMoveCategory = (menu) => {
     setCategoryFilter(menu);
+    onCloseSlideBar && onCloseSlideBar();
   };
 
   return (

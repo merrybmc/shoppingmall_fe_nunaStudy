@@ -1,15 +1,21 @@
 import styled from 'styled-components';
 
+export const TopContainer = styled.div`
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  margin-left: auto;
+  margin-top: 20px;
+  margin-right: 35px;
+
+  cursor: pointer;
+`;
+
 export const LoginButton = styled.div`
   display: flex;
   align-items: center;
-  width: 100px;
-  height: 24px;
-  margin-left: auto;
   gap: 8px;
-  padding-top: 20px;
-
-  cursor: pointer;
 `;
 
 export const LogoBox = styled.div`
@@ -23,21 +29,6 @@ export const LogoImage = styled.img`
   border-radius: 50%;
 
   cursor: pointer;
-`;
-
-export const MenuList = styled.ul`
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  gap: 18px;
-`;
-
-export const MenuItem = styled.li`
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
 `;
 
 export const BottomContainer = styled.div`

@@ -1,32 +1,34 @@
-import React from 'react';
-import { CiUser } from 'react-icons/ci';
+import React, { useEffect, useState } from 'react';
+
 import * as S from './Navbar.styled';
 import SearchInput from './SearchInput';
 import MenuList from './MenuList';
-import { menuList } from '../constants/menuList';
 import logo from '../assets/pikachu_hello.gif';
 import { useNavigate } from 'react-router-dom';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import LoginContainer from './LoginContainer';
 
-export default function Navbar({ authenticate, setAuthenticate, setCategoryFilter }) {
+export default function Navbar({ authenticate, setCategoryFilter, setSlideBarState, onMovePage }) {
   const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  const onMovePage = (path) => {
-    if (authenticate && path === '/login') {
-      setAuthenticate(false);
-      navigate('/');
-    } else if (!authenticate && path === '/login') {
-      navigate('/login');
-    } else {
-      navigate(path);
-      setCategoryFilter('');
-    }
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <>
-      <S.LoginButton onClick={() => onMovePage('/login')}>
-        <CiUser />
-        <p>{authenticate ? '로그아웃' : '로그인'}</p>
-      </S.LoginButton>
+      <S.TopContainer>
+        {isMobile ? (
+          <GiHamburgerMenu onClick={() => setSlideBarState(true)} />
+        ) : (
+          <LoginContainer onMovePage={onMovePage} authenticate={authenticate} />
+        )}
+      </S.TopContainer>
       <S.LogoBox
         onClick={() => {
           onMovePage('/');
@@ -34,10 +36,14 @@ export default function Navbar({ authenticate, setAuthenticate, setCategoryFilte
       >
         <S.LogoImage src={logo} />
       </S.LogoBox>
-      <S.BottomContainer>
-        <MenuList menuList={menuList} setCategoryFilter={setCategoryFilter} />
-        <SearchInput />
-      </S.BottomContainer>
+      {isMobile ? (
+        ''
+      ) : (
+        <S.BottomContainer>
+          <MenuList setCategoryFilter={setCategoryFilter} />
+          <SearchInput />
+        </S.BottomContainer>
+      )}
     </>
   );
 }
