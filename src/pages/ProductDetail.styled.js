@@ -6,6 +6,14 @@ export const DetailContainer = styled.div`
   justify-content: center;
 
   gap: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 24px;
+    gap: 8px;
+  }
 `;
 
 export const ProductImage = styled.img`
